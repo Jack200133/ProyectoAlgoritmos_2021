@@ -1,5 +1,6 @@
 import java.util.HashMap;
 
+
 public class Evaluar<V,F> {
     private Operaciones op;
     public Evaluar(){
@@ -8,8 +9,10 @@ public class Evaluar<V,F> {
 
     private HashMap<V, F> almacen = new HashMap<V, F>();
 
-    public String Evaluo(String input){
-        input = input.replaceAll("\\s","");
+    public String Evaluo(String input) {
+        //input = input.replaceAll("\\s","");
+
+        //(define vaca (cond a b))
         String[] temp = input.split("()");
         String res = "";
 
