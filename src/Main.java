@@ -19,7 +19,7 @@ public class Main {
 
         String input = scan.nextLine();
 
-        eval.Evaluo(input);
+        System.out.printf(eval.Evaluo(input));
 
     }
 }

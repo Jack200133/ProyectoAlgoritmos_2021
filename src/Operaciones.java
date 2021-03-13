@@ -1,34 +1,78 @@
 public class Operaciones {
 
-    Evaluar ev;
+
     public Operaciones() {
-        ev = new Evaluar();
+
     }
 
     public String Operar(String op){
+        Evaluar ev = Singlenton.getEvaluacion();
         String res = "";
         String[] temp = op.split("()");
         char s1 = op.charAt(2);
         char s2 = op.charAt(4);
-
-        if(temp[0] == "+" ||temp[0] == "*" ||temp[0] == "-"||temp[0] == "/"){
+        //System.out.println(op);
+        if(temp[0].equals("+")||temp[0].equals("*") ||temp[0].equals("-")||temp[0].equals("/")){
             if(Character.isDigit(s1) && Character.isDigit(s2))  {
                  res = Operar(temp[2], temp[4], temp[0]);
-            }else{
-                for (int i = 1; i <= temp.length - 1; i++) {
-                    temp[i-1] = temp[i];
+            }else {
+
+                if(temp[2].equals("(") && temp[temp.length-1].equals(")")) {
+                    String r1 = "";
+                    for (int i = 2; i < 9; i++) {
+                        r1 += temp[i];
+                    }
+
+                    int firstBracket = op.indexOf('(');
+                    String ct = op.substring(firstBracket + 1, op.indexOf(')', firstBracket));
+
+                    System.out.println(ct);
+                    String dq = ev.Evaluo(r1);
+
+                    String r2 = "";
+                    for (int i = temp.length-7; i < temp.length; i++) {
+                        r2 += temp[i];
+                    }
+                    String dp = ev.Evaluo(r2);
+
+                    res = Operar(dq, dp, temp[0]);
+
+
                 }
-                String eva = "";
-                for (int i = 0; i <= temp.length-3; i++) {
-                    eva+=temp[i];
+                else if(temp[2].equals("(") && !temp[temp.length-1].equals(")")){
+                    String r1 ="";
+                    for (int i = 2; i < 9; i++) {
+                        r1 += temp[i];
+                    }
+                    String dq = ev.Evaluo(r1);
+
+                    res = Operar(dq,temp[temp.length-1],temp[0]);
+
+
+
                 }
-                System.out.print(eva);
-                Operar(ev.Evaluo(eva));
-                //(+ 3 (+ 2 5))
+                else if(!temp[2].equals("(") && temp[temp.length-1].equals(")")){
+
+                    String r2 = "";
+                    for (int i = 4; i < temp.length; i++) {
+                        r2 += temp[i];
+                    }
+                    String dp = ev.Evaluo(r2);
+
+                    res = Operar(temp[2], dp, temp[0]);
+
+                }
+
+
+                //(+ (+ (- 3 1) (* 2 1)) (+ 3 1))
+                //(+ (+ 3 1) 5)
+                //(+ (* 2 1) (+ 3 1))
+
+
             }
-        }else
-        {
-            ev.Evaluo(op);
+        }else{
+            res = ev.Evaluo(op);
+
         }
         return res;
     }
@@ -38,30 +82,14 @@ public class Operaciones {
         int d2 = Integer.parseInt(dato2);
         int res = switch (signo) {
             case "+" -> (d2 + d1);
-            case "-" -> (d2 - d1);
+            case "-" -> (d1 - d2);
             case "*" -> (d2 * d1);
-            case "/" -> (d2 / d1);
+            case "/" -> (d1 / d2);
             default -> 0;
         };
 
         return String.valueOf(res);
     }
 
-    boolean isNumber(String str) {
-        if (str.length() == 0)
-            return false; //To check if string is empty
 
-        if (str.charAt(0) == '-')
-            str = str.replaceFirst("-", "");// for handling -ve numbers
-
-        System.out.println(str);
-
-        str = str.replaceFirst("\\.", ""); //to check if it contains more than one decimal points
-
-        if (str.length() == 0)
-            return false; // to check if it is empty string after removing -ve sign and decimal point
-        System.out.println(str);
-
-        return str.replaceAll("[0-9]", "").length() == 0;
-    }
 }
