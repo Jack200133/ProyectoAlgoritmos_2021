@@ -8,12 +8,13 @@ public class Operaciones {
     public String Operar(String op){
         String res = "";
         String[] temp = op.split("()");
+        char s1 = op.charAt(2);
+        char s2 = op.charAt(4);
 
         if(temp[0] == "+" ||temp[0] == "*" ||temp[0] == "-"||temp[0] == "/"){
-            if(isNumber(temp[2]) && isNumber(temp[4]))  {
+            if(Character.isDigit(s1) && Character.isDigit(s2))  {
                  res = Operar(temp[2], temp[4], temp[0]);
             }else{
-                String signo = temp[0];
                 for (int i = 1; i <= temp.length - 1; i++) {
                     temp[i-1] = temp[i];
                 }
