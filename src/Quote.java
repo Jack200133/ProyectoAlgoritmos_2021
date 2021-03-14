@@ -1,5 +1,6 @@
 import java.lang.*;
 
+
 public class Quote {
 
     public Quote() {
@@ -7,16 +8,20 @@ public class Quote {
     }
 
     public String DeQuote(String input) {
-        
+
+        input = input.substring(input.lastIndexOf("("),input.indexOf(")") + 1);
+        /*
         int lastIndex = input.length();
 
-        String QuotedInput = insertString(insertString(input, "(", 0), ")", lastIndex);
+        String QuotedInput = insertString(insertString(input, "(", 0), ")", lastIndex);*/
 
-        return QuotedInput;
+        //return QuotedInput;
+
+        return input;
 
     }
 
-    private String insertString(String original, String insert, int index){
+    /*private String insertString(String original, String insert, int index){
 
         String newString = new String();
 
@@ -28,6 +33,6 @@ public class Quote {
             }
         }
         return newString;
-    }
+    }*/
 
 }

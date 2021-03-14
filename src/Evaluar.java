@@ -23,7 +23,7 @@ public class Evaluar<V,F> {
         if (input.contains("define")) {
             System.out.print("Funcion");
 
-        } else if (input.contains("quote") || input.contains("'")) {
+        } else if (input.contains("quote")) {
             return quote.DeQuote(input);
             
 
