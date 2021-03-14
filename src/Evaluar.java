@@ -3,9 +3,13 @@ import java.util.HashMap;
 
 public class Evaluar<V,F> {
     private Operaciones op;
+    private Quote quote;
     public Evaluar(){
         op = new Operaciones();
+        quote = new Quote();
     }
+
+    
 
     private HashMap<V, F> almacen = new HashMap<V, F>();
 
@@ -19,8 +23,9 @@ public class Evaluar<V,F> {
         if (input.contains("define")) {
             System.out.print("Funcion");
 
-        } else if (input.contains("quote")) {
-            System.out.print("Quote ");
+        } else if (input.contains("quote") || input.contains("'")) {
+            return quote.DeQuote(input);
+            
 
         } else if (input.contains("setq")) {
             System.out.print("SetQ");
