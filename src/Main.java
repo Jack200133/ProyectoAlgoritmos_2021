@@ -18,8 +18,8 @@ public class Main {
         System.out.println("Ingrese su expresion: ");
 
         String input = scan.nextLine();
-
-        System.out.printf(eval.Evaluo(input));
+        Scanner scon = new Scanner(input);
+        System.out.printf(eval.Evaluo(input,scon));
 
     }
 }
