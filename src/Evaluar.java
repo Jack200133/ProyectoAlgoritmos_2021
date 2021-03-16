@@ -5,12 +5,13 @@ public class Evaluar<V,F> {
     private final Operaciones op;
     private final Quote quote;
     private final Funciones fun;
+    private final SetQ setq;
 
     public Evaluar(){
         op = new Operaciones();
         quote = new Quote();
         fun = new Funciones();
-
+        setq = new SetQ();
     }
 
     
@@ -60,9 +61,8 @@ public class Evaluar<V,F> {
         String[] temp = input.split(" ");
 
         if (input.contains("defun")) {
-
+            
             if(!almacen.containsKey(temp[1])){
-
                 almacen.put(temp[1], (F) fun.Defun(input));
                 System.out.println(almacen);
             }
@@ -76,10 +76,16 @@ public class Evaluar<V,F> {
         else if (input.contains("quote")) {
             return quote.DeQuote(input);
             
-
+            
         }
         else if (input.contains("setq")) {
-            System.out.print("SetQ");
+            
+            if(!almacen.containsKey(temp[1])){
+                
+                almacen.put(temp[1], (F) setq.setQ(input));
+                System.out.println(almacen);
+            }
+            
 
         }
         else if (input.contains("cond")) {
