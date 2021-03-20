@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SetQ {
     
     private Quote q;
@@ -14,8 +16,8 @@ public class SetQ {
         
     }
 
-    private String toString() {
-        String[] temp = hacer.split("");
+    public String toString() {
+        /**String[] temp = hacer.split("");
         StringBuilder ve = new StringBuilder();
         for (String s : temp) {
             ve.append(s);
@@ -23,6 +25,8 @@ public class SetQ {
         }
         ve.deleteCharAt(temp.length+2);
         return (" ("+ve +")");
+         */
+        return null;
     }
 
 }

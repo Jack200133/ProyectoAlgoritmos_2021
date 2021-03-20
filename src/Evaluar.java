@@ -5,13 +5,16 @@ public class Evaluar<V,F> {
     private final Operaciones op;
     private final Quote quote;
     private final Funciones fun;
+    private final Variables van;
     private final SetQ setq;
+
 
     public Evaluar(){
         op = new Operaciones();
         quote = new Quote();
         fun = new Funciones();
         setq = new SetQ();
+        van = new Variables();
     }
 
     
@@ -24,29 +27,25 @@ public class Evaluar<V,F> {
 
         StringBuilder res = new StringBuilder();
 
-        //( define doble ( * x 2 ) )
+        //( defun doble ( x ) ( * x 2 ) )
+        //( defun doble ( x ) ( * ( - x 1 )  x ) )
+        //( defun doble ( 2 ) )
         // ( quote 12 )
-        //(defun area-circle(rad)
-        //   "Calculates area of a circle with given radius"
-        //   (terpri)
-        //   (format t "Radius: ~5f" rad)
-        //   (format t "~%Area: ~10f" (* 3.141592 rad rad))
-        //)
-        //(define fact (lambda (n) (if (= n 0) 1 (* n (fact(- n 1)) ))
-        //))
-        //( + ( + ( - 3 1 ) ( * 2 1 ) ) (  + 3 1 ) )
+        // ( defun fatorial ( n ) ( cond ( ( = n 1 ) 1 ) ( t ( * n ( fatorial ( - n 1 ) ) ) ) ) )
+
         for (int i = 0; i < input.length(); i++) {
             if(scan.hasNext()){
                 String tem = scan.next();
 
                 if (tem.equals(")")) {
-                    res = new StringBuilder(queso(res.toString()));
+                    res = new StringBuilder(queso(res.toString(),input));
                     return res.toString();
                 }else if (!tem.equals("(")) {
                     res.append(tem);
                     res.append(" ");
                 }else{
                     res.append(Evaluo(input, scan));
+                    res.append(" ");
 
                 }
             }
@@ -55,22 +54,69 @@ public class Evaluar<V,F> {
         return res.toString();
     }
 
-    public String queso(String input){
+    public String Evaluo(String input) {
+        Scanner scan = new Scanner(input);
+
+        StringBuilder res = new StringBuilder();
+
+        for (int i = 0; i < input.length(); i++) {
+            if(scan.hasNext()){
+                String tem = scan.next();
+
+                if (tem.equals(")")) {
+                    res = new StringBuilder(queso(res.toString(),input));
+                    return res.toString();
+                }else if (!tem.equals("(")) {
+                    res.append(tem);
+                    res.append(" ");
+                }else{
+                    res.append(Evaluo(input, scan));
+                    res.append(" ");
+
+                }
+            }
+
+        }
+        return res.toString();
+    }
+
+    public String queso(String input,String completo){
 
         String res = "";
         String[] temp = input.split(" ");
 
-        if (input.contains("defun")) {
+
+        if (input.contains("defun") ) {
             
             if(!almacen.containsKey(temp[1])){
-                almacen.put(temp[1], (F) fun.Defun(input));
+
+                almacen.put(temp[1], (F) fun.Defun(completo));
                 System.out.println(almacen);
             }
-            System.out.print("Funcion");
+            else{
+
+                Funciones fe = (Funciones) almacen.get(temp[1]);
+
+                String e = fe.loquehace(temp[2]);
+                res = Evaluo(e);
+                return res;
+            }
+
 
         }
         else if (input.contains("defvar")) {
-            System.out.print("Variable");
+
+            if(!almacen.containsKey(temp[1])){
+
+                almacen.put(temp[1], (F) van.Defvar(completo));
+                System.out.println(almacen);
+            }
+            else{
+
+                res = (String) almacen.get(temp[1]);
+                return res;
+            }
+
 
         }
         else if (input.contains("quote")) {
@@ -96,22 +142,31 @@ public class Evaluar<V,F> {
             System.out.print("Predicados");
 
         }
-        else {
+        else if(almacen.containsKey(temp[0])){
+            //if de .Class para fun y var
+            if (almacen.get(temp[0]).getClass() == fun.getClass()){
+                Funciones fe = (Funciones) almacen.get(temp[0]);
 
-
-            if(temp.length>3){
-                res = op.Operar(temp[2],temp[4],temp[0]);
-            }else if(temp.length==3){
-                res = op.Operar(temp[1],temp[2],temp[0]);
-            }else{
-                String[] temp1 = temp[1].split("");
-                res = op.Operar(temp1[0],temp1[1],temp[0]);
+                String e = fe.loquehace(temp[1]);
+                res = Evaluo(e);
+                return res;
+            } else if (almacen.get(temp[0]).getClass() == van.getClass()){
+                Variables va = (Variables) almacen.get(temp[0]);
+                res = va.getvalor();
+                return res;
             }
 
+        }
+        else {
 
+                if(temp.length > 2)
+                {
+                    res = op.Operar(input);
+                    return res;
+                }
 
         }
-        return res;
+        return input;
 
     }
 
