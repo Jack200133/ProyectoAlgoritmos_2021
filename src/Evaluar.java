@@ -7,7 +7,7 @@ public class Evaluar<V,F> {
     private final Funciones fun;
     private final Variables van;
     private final SetQ setq;
-
+    private final Predicados pred;
 
     public Evaluar(){
         op = new Operaciones();
@@ -15,6 +15,7 @@ public class Evaluar<V,F> {
         fun = new Funciones();
         setq = new SetQ();
         van = new Variables();
+        pred = new Predicados();
     }
 
     
@@ -90,7 +91,7 @@ public class Evaluar<V,F> {
             
             if(!almacen.containsKey(temp[1])){
 
-                almacen.put(temp[1], (F) fun.Defun(completo));
+                almacen.put((V)temp[1], (F) fun.Defun(completo));
                 System.out.println(almacen);
             }
             else{
@@ -108,7 +109,7 @@ public class Evaluar<V,F> {
 
             if(!almacen.containsKey(temp[1])){
 
-                almacen.put(temp[1], (F) van.Defvar(completo));
+                almacen.put((V)temp[1], (F) van.Defvar(completo));
                 System.out.println(almacen);
             }
             else{
@@ -128,7 +129,7 @@ public class Evaluar<V,F> {
             
             if(!almacen.containsKey(temp[1])){
                 
-                almacen.put(temp[1], (F) setq.setQ(input));
+                almacen.put((V)temp[1], (F) setq.setQ(input));
                 System.out.println(almacen);
             }
             
@@ -138,9 +139,29 @@ public class Evaluar<V,F> {
             System.out.print("Condicionañles");
 
         }
-        else if (input.contains("atom") || input.contains("listp") || input.contains("equal") || input.contains(">") || input.contains("<")) {
-            System.out.print("Predicados");
+        else if (input.contains("atom")) {
+            System.out.print(pred.atom(input));
 
+        } else if (input.contains("listp")){
+            System.out.print("Listp");
+        } else if (input.contains("equal")) {
+            if(pred.equals(input)) {
+                System.out.println(input + "es T");
+            } else {
+                System.out.println(input + "es NIL");
+            }
+        } else if (input.contains(">")) {
+            if(pred.biggerThan(input)) {
+                System.out.println(input + "es T");
+            } else {
+                System.out.println(input + "es NIL");
+            }
+        } else if (input.contains("<")) {
+            if(pred.smallerThan(input)) {
+                System.out.println(input + "es T");
+            } else {
+                System.out.println(input + "es NIL");
+            }
         }
         else if(almacen.containsKey(temp[0])){
             //if de .Class para fun y var
