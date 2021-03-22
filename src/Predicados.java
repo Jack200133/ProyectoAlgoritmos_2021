@@ -1,14 +1,8 @@
+import java.util.*;
+
 public class Predicados {
 
     public Predicados() {
-
-    }
-
-    public String atom(String input) {
-        
-    }
-
-    public String listp(String input) {
 
     }
 

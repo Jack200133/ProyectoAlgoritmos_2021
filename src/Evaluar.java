@@ -140,10 +140,18 @@ public class Evaluar<V,F> {
 
         }
         else if (input.contains("atom")) {
-            System.out.print(pred.atom(input));
+            if(!almacen.containsKey(temp[1])) {
+                System.out.println(input + " es T");
+            } else {
+                System.out.println(input + " es NIL");
+            }
 
         } else if (input.contains("listp")){
-            System.out.print("Listp");
+            if(!almacen.containsKey(temp[1])) {
+                System.out.println(input + " es NIL");
+            } else {
+                System.out.println(input + " es T");
+            }
         } else if (input.contains("equal")) {
             if(pred.equals(input)) {
                 System.out.println(input + "es T");
