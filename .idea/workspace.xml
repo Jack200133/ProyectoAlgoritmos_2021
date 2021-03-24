@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="&quot; Creacion y finalizacion de funciones, variables y SetQ con recurcion &quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Evaluar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Evaluar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Funciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Funciones.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Operaciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Operaciones.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Variables.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Variables.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Condicionales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Condicionales.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Evaluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Funciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Funciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Operaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operaciones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SetQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SetQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Variables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Variables.java" afterDir="false" />
     </list>
     <list id="0a368895-f473-42f3-bf84-c093de6f3ff6" name="Changes by Andre" comment="" />
     <list id="2ba161a0-02ba-4508-a20c-fcc44a799d2e" name="Changes by Franco" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Evaluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Funciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Funciones.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,38 +101,15 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/Funciones.java">
       <ranges>
-        <range start1="3" end1="4" start2="3" end2="5" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="9" end1="11" start2="10" end2="13" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="14" end1="14" start2="16" end2="17" changelist="2ba161a0-02ba-4508-a20c-fcc44a799d2e" />
-        <range start1="16" end1="17" start2="19" end2="25" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="19" end1="24" start2="27" end2="40" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="34" end1="36" start2="50" end2="52" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Evaluar.java">
-      <ranges>
-        <range start1="7" end1="7" start2="7" end2="8" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="8" end1="8" start2="9" end2="10" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="14" end1="14" start2="16" end2="17" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="18" end1="19" start2="21" end2="22" changelist="2ba161a0-02ba-4508-a20c-fcc44a799d2e" />
-        <range start1="26" end1="27" start2="29" end2="32" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="28" end1="37" start2="33" end2="35" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="42" end1="43" start2="40" end2="41" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="49" end1="49" start2="47" end2="48" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="57" end1="58" start2="56" end2="83" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="61" end1="61" start2="86" end2="87" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="62" end1="63" start2="88" end2="89" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="65" end1="66" start2="91" end2="93" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="67" end1="67" start2="94" end2="102" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="68" end1="69" start2="103" end2="104" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="72" end1="73" start2="107" end2="119" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="81" end1="82" start2="127" end2="128" changelist="2ba161a0-02ba-4508-a20c-fcc44a799d2e" />
-        <range start1="83" end1="85" start2="129" end2="131" changelist="2ba161a0-02ba-4508-a20c-fcc44a799d2e" />
-        <range start1="87" end1="88" start2="133" end2="139" changelist="2ba161a0-02ba-4508-a20c-fcc44a799d2e" />
-        <range start1="98" end1="98" start2="149" end2="164" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="100" end1="109" start2="166" end2="171" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="110" end1="112" start2="172" end2="172" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="113" end1="114" start2="173" end2="174" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="0" end1="1" start2="0" end2="0" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="16" end1="16" start2="15" end2="16" changelist="2ba161a0-02ba-4508-a20c-fcc44a799d2e" />
+        <range start1="17" end1="21" start2="17" end2="43" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="22" end1="22" start2="44" end2="47" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="23" end1="24" start2="48" end2="57" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="28" end1="30" start2="61" end2="63" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="34" end1="36" start2="67" end2="69" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="38" end1="39" start2="71" end2="72" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="43" end1="51" start2="76" end2="77" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
       </ranges>
     </file>
   </component>
@@ -215,8 +186,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HDT4" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -342,7 +314,12 @@
       <workItem from="1616085055601" duration="1388000" />
       <workItem from="1616090637044" duration="2029000" />
       <workItem from="1616128024661" duration="42000" />
-      <workItem from="1616195964723" duration="14458000" />
+      <workItem from="1616195964723" duration="15869000" />
+      <workItem from="1616362632453" duration="41000" />
+      <workItem from="1616364403908" duration="2076000" />
+      <workItem from="1616462656618" duration="884000" />
+      <workItem from="1616524062011" duration="111000" />
+      <workItem from="1616524189334" duration="31759000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Creacion de clases y primeras funciones&quot;">
       <created>1615307150070</created>
@@ -386,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615785246096</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="&quot; Creacion y finalizacion de funciones, variables y SetQ con recurcion &quot;">
+      <created>1616214569663</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616214569663</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -447,7 +431,8 @@
     <MESSAGE value="&quot;comprobacion que cuando ingresen una operacion sean numeros &quot;" />
     <MESSAGE value="&quot;RECURCION :)&quot;" />
     <MESSAGE value="&quot;Comienzos del defuin y el defvar y el almacenamiento de estos&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Comienzos del defuin y el defvar y el almacenamiento de estos&quot;" />
+    <MESSAGE value="&quot; Creacion y finalizacion de funciones, variables y SetQ con recurcion &quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot; Creacion y finalizacion de funciones, variables y SetQ con recurcion &quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

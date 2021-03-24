@@ -2,31 +2,35 @@ import java.util.Arrays;
 
 public class SetQ {
     
-    private Quote q;
+    private String q;
 
     public SetQ() {
-        q = new Quote();
     }
 
-    public String setQ(String input) {
-        input = q.DeQuote(input);
-        String temp[] = input.split(" ");
-        System.out.println(Arrays.toString(temp));
-        return temp[2];
+    public SetQ(String in) {
+        q = in;
+    }
+
+    public SetQ defq(String input) {
+        String[] temp = input.split(" ");
+        String res = "";
+        if (temp[3].equals("(")){
+            for(int i = 3; i < temp.length-1;i++){
+                res+= temp[i];
+            }
+            return new SetQ(res);
+        }
+        return new SetQ(temp[3]);
         
     }
 
+    public String getvalor(){
+        return q;
+    }
+
+    @Override
     public String toString() {
-        /**String[] temp = hacer.split("");
-        StringBuilder ve = new StringBuilder();
-        for (String s : temp) {
-            ve.append(s);
-            ve.append(" ");
-        }
-        ve.deleteCharAt(temp.length+2);
-        return (" ("+ve +")");
-         */
-        return null;
+        return (q);
     }
 
 }
