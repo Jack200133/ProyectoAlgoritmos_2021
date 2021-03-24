@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Funciones {
     private String parametros;
@@ -15,12 +16,12 @@ public class Funciones {
     public Funciones Defun(String input) {
         String[] temp = input.split(" ");
         StringBuilder eve = new StringBuilder();
-
+        System.out.println(Arrays.toString(temp));
         for (int i = 6; i < temp.length; i++) {
             try {
                 char c = input.charAt(i);
 
-                if(Character.isLetterOrDigit(c)){
+                if(Character.isLetterOrDigit(c)|| temp[4].equals(temp[i])){
 
                     if(temp[i].equals("(") || temp[i].equals(")") || temp[i].equals("=") || temp[i].equals("-") || temp[i].equals("+") || temp[i].equals("*") || temp[i].equals("/")|| temp[i].equals("<") || temp[i].equals(">") ){
                         eve.append(" ");
@@ -41,7 +42,6 @@ public class Funciones {
             }
 
         }
-        System.out.println("HACE ESTO "+eve);
         return new Funciones(eve.toString(),temp[4]);
     }
 

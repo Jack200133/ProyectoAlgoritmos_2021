@@ -93,7 +93,6 @@ public class Evaluar<V,F> {
         if (input.contains("defun") ) {
             
             if(!almacen.containsKey(temp[1])){
-
                 almacen.put((V)temp[1], (F) fun.Defun(completo));
                 System.out.println(almacen);
                 return "Se agrego la funcion " + temp[1];
@@ -109,14 +108,67 @@ public class Evaluar<V,F> {
 
 
         }
+
+        else if (input.contains("condf")){
+            String[] tamp = completo.split(" ");
+            int ontast = 0;
+            String pruebas = "";
+            String positivo = "";
+            String evluar = "";
+            int cintpar = 0;
+
+            for (int i = 11; i < tamp.length; i++) {
+
+                if (tamp[i].equals("t")){
+                    ontast = i;
+                }
+            }
+            for (int i = ontast+1; i < tamp.length ; i++) {
+                pruebas += tamp[i];
+                pruebas += " ";
+            }
+            for ( int i = 7; i < ontast - 2 ; i++){
+
+                if(cintpar > 0){
+                    positivo += tamp[i];
+                    positivo += " ";
+                }
+                if(tamp[i].equals(")")){
+                    cintpar += 1;
+                }
+            }
+            cintpar = 0;
+            for (int i = 7; i < ontast-2; i++) {
+                if(cintpar > 1){
+                    evluar += tamp[i];
+                    evluar += " ";
+                }
+                if(tamp[i].equals("(")){
+                    cintpar += 1;
+                }
+                if(tamp[i].equals(")")){
+                    cintpar -= 3;
+                }
+            }
+            System.out.println("LO QUE SE EVALAUA: " + evluar);
+            System.out.println("Positivi : " + positivo);
+            System.out.println("Negativo : " + pruebas);
+            System.out.println("LOEVALUADO: " + Evaluo(evluar));
+            if(Evaluo(evluar).equals("T")){
+                return positivo;
+            }else {
+                return pruebas;
+            }
+        }
         else if (input.contains("cond")) {
+
             Condicionales condicion = cond.Condi(input,completo);
 
-           if (condicion.Estado().equals("T")){
-               return Evaluo(temp[2]);
-           }else {
-               return Evaluo(condicion.Condicionar());
-           }
+            if (condicion.Estado().equals("T")){
+                return Evaluo(temp[2]);
+            }else {
+                return Evaluo(condicion.Condicionar());
+            }
 
         }
         else if (input.contains("defvar")) {
@@ -202,13 +254,14 @@ public class Evaluar<V,F> {
                 return "NIL";
             }
         }
+
         else if(almacen.containsKey(temp[0])){
             //if de .Class para fun y var
             if (almacen.get(temp[0]).getClass() == fun.getClass()){
                 Funciones fe = (Funciones) almacen.get(temp[0]);
 
                 String e = fe.loquehace(temp[1]);
-                System.out.println("E: "+e);
+
                 res = Evaluo(e);
 
                 return res;

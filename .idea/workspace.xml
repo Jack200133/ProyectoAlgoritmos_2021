@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="&quot; Creacion y finalizacion de funciones, variables y SetQ con recurcion &quot;">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="&quot;Primeras pruebas del cond &quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Condicionales.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Condicionales.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Evaluar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Evaluar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Funciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Funciones.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Predicados.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Predicados.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Condicionales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Condicionales.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Evaluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Funciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Funciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SetQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SetQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Predicados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Predicados.java" afterDir="false" />
     </list>
     <list id="0a368895-f473-42f3-bf84-c093de6f3ff6" name="Changes by Andre" comment="" />
     <list id="2ba161a0-02ba-4508-a20c-fcc44a799d2e" name="Changes by Franco" comment="">
@@ -101,15 +103,11 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/Funciones.java">
       <ranges>
-        <range start1="0" end1="1" start2="0" end2="0" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="16" end1="16" start2="15" end2="16" changelist="2ba161a0-02ba-4508-a20c-fcc44a799d2e" />
-        <range start1="17" end1="21" start2="17" end2="43" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="22" end1="22" start2="44" end2="47" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="23" end1="24" start2="48" end2="57" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="28" end1="30" start2="61" end2="63" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="34" end1="36" start2="67" end2="69" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="38" end1="39" start2="71" end2="72" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
-        <range start1="43" end1="51" start2="76" end2="77" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="0" end1="0" start2="0" end2="1" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="15" end1="15" start2="16" end2="17" changelist="2ba161a0-02ba-4508-a20c-fcc44a799d2e" />
+        <range start1="17" end1="18" start2="19" end2="20" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="22" end1="23" start2="24" end2="25" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
+        <range start1="43" end1="44" start2="45" end2="45" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" />
       </ranges>
     </file>
   </component>
@@ -319,7 +317,7 @@
       <workItem from="1616364403908" duration="2076000" />
       <workItem from="1616462656618" duration="884000" />
       <workItem from="1616524062011" duration="111000" />
-      <workItem from="1616524189334" duration="31759000" />
+      <workItem from="1616524189334" duration="37258000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Creacion de clases y primeras funciones&quot;">
       <created>1615307150070</created>
@@ -370,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616214569663</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="&quot;Primeras pruebas del cond &quot;">
+      <created>1616566665950</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1616566665950</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -432,7 +437,8 @@
     <MESSAGE value="&quot;RECURCION :)&quot;" />
     <MESSAGE value="&quot;Comienzos del defuin y el defvar y el almacenamiento de estos&quot;" />
     <MESSAGE value="&quot; Creacion y finalizacion de funciones, variables y SetQ con recurcion &quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot; Creacion y finalizacion de funciones, variables y SetQ con recurcion &quot;" />
+    <MESSAGE value="&quot;Primeras pruebas del cond &quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Primeras pruebas del cond &quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -8,6 +8,7 @@ public class Predicados {
 
     public boolean equals(String input) {
         String temp[] = input.split(" ");
+
         int length = temp.length;
         String first = temp[1];
         boolean state = true;
@@ -19,6 +20,7 @@ public class Predicados {
                 return state;
             }
         }
+        System.out.println(Arrays.toString(temp));
         return state;
     }
 

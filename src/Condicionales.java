@@ -1,10 +1,11 @@
 import java.util.Arrays;
 
 public class Condicionales {
-
+    private Predicados pred;
     private String falso;
     private String comprobar;
     public Condicionales() {
+        pred = new Predicados();
     }
     public Condicionales(String fe, String que) {
         falso = fe;
@@ -12,10 +13,13 @@ public class Condicionales {
     }
 
     public Condicionales Condi(String input, String completo) {
-        System.out.println(input);
-        System.out.println(completo);
+
+
+
         String[] temp = input.split(" ");
         String[] tamp = completo.split(" ");
+        System.out.println(Arrays.toString(temp));
+        System.out.println(Arrays.toString(tamp));
         int ontast = 0;
         String pruebas = "";
 
@@ -45,6 +49,38 @@ public class Condicionales {
     }
     public String Estado(){
         return comprobar;
+    }
+
+    private String compara(String input){
+
+        if (input.contains("equal") || input.contains("=")) {
+            if(pred.equals(input)) {
+                System.out.println(input + "es T");
+                return "T";
+            } else {
+                System.out.println(input + "es NIL");
+                return "NIL";
+            }
+        }
+        else if (input.contains(">")) {
+            if(pred.biggerThan(input)) {
+                System.out.println(input + "es T");
+                return "T";
+            } else {
+                System.out.println(input + "es NIL");
+                return "NIL";
+            }
+        }
+        else if (input.contains("<")) {
+            if(pred.smallerThan(input)) {
+                System.out.println(input + "es T");
+                return "T";
+            } else {
+                System.out.println(input + "es NIL");
+                return "NIL";
+            }
+        }
+        return input;
     }
 
 }
