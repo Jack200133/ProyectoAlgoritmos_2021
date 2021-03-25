@@ -18,8 +18,6 @@ public class Condicionales {
 
         String[] temp = input.split(" ");
         String[] tamp = completo.split(" ");
-        System.out.println(Arrays.toString(temp));
-        System.out.println(Arrays.toString(tamp));
         int ontast = 0;
         String pruebas = "";
 
@@ -36,7 +34,8 @@ public class Condicionales {
         if(temp[1].equals("NIL")){
             System.out.println("ENTRE AL NIL");
             return new Condicionales(pruebas, "NIL");
-        }else{
+        }
+        else{
             System.out.println("ENTRE AL T");
             return new Condicionales(temp[1],"T");
 
@@ -51,36 +50,5 @@ public class Condicionales {
         return comprobar;
     }
 
-    private String compara(String input){
-
-        if (input.contains("equal") || input.contains("=")) {
-            if(pred.equals(input)) {
-                System.out.println(input + "es T");
-                return "T";
-            } else {
-                System.out.println(input + "es NIL");
-                return "NIL";
-            }
-        }
-        else if (input.contains(">")) {
-            if(pred.biggerThan(input)) {
-                System.out.println(input + "es T");
-                return "T";
-            } else {
-                System.out.println(input + "es NIL");
-                return "NIL";
-            }
-        }
-        else if (input.contains("<")) {
-            if(pred.smallerThan(input)) {
-                System.out.println(input + "es T");
-                return "T";
-            } else {
-                System.out.println(input + "es NIL");
-                return "NIL";
-            }
-        }
-        return input;
-    }
 
 }
