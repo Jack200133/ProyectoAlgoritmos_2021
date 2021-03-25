@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="&quot;Segundo intento del cond &quot;">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="&quot;Comentarios de main, evaular y operaciones &quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Condicionales.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Condicionales.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Evaluar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Evaluar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Funciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Funciones.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Operaciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Operaciones.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Predicados.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Predicados.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Quote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Quote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/SetQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/SetQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Variables.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Variables.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Condicionales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Condicionales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Evaluar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Operaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operaciones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Predicados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Predicados.java" afterDir="false" />
     </list>
     <list id="0a368895-f473-42f3-bf84-c093de6f3ff6" name="Changes by Andre" comment="" />
     <list id="2ba161a0-02ba-4508-a20c-fcc44a799d2e" name="Changes by Franco" comment="" />
@@ -364,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616572049823</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="&quot;Comentarios de main, evaular y operaciones &quot;">
+      <created>1616637068240</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1616637068240</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -428,7 +423,8 @@
     <MESSAGE value="&quot; Creacion y finalizacion de funciones, variables y SetQ con recurcion &quot;" />
     <MESSAGE value="&quot;Primeras pruebas del cond &quot;" />
     <MESSAGE value="&quot;Segundo intento del cond &quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Segundo intento del cond &quot;" />
+    <MESSAGE value="&quot;Comentarios de main, evaular y operaciones &quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Comentarios de main, evaular y operaciones &quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

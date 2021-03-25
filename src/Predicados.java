@@ -47,10 +47,10 @@ public class Predicados {
     public boolean biggerThan(String input) {
         String temp[] = input.split(" ");
         int length = temp.length;
-        int comparison1 = Integer.parseInt(temp[1]);
+        double comparison1 = Double.parseDouble(temp[1]);
         boolean state = true;
         for(int i = 2; i < length; i++) {
-            int comparison2 = Integer.parseInt(temp[i]);
+            double comparison2 = Double.parseDouble(temp[i]);
             if(comparison1 > comparison2) {
                 state = true;
                 comparison1 = comparison2;
@@ -71,10 +71,10 @@ public class Predicados {
     public boolean smallerThan(String input) {
         String temp[] = input.split(" ");
         int length = temp.length;
-        int comparison1 = Integer.parseInt(temp[1]);
+        double comparison1 = Double.parseDouble(temp[1]);
         boolean state = true;
         for(int i = 2; i < length; i++) {
-            int comparison2 = Integer.parseInt(temp[i]);
+            double comparison2 = Double.parseDouble(temp[i]);
             if(comparison1 < comparison2) {
                 state = true;
                 comparison1 = comparison2;
