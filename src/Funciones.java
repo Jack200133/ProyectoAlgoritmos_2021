@@ -39,7 +39,7 @@ public class Funciones {
     public Funciones Defun(String input) {
         String[] temp = input.split(" ");
         StringBuilder eve = new StringBuilder();
-        System.out.println(Arrays.toString(temp));
+        //System.out.println(Arrays.toString(temp));
         for (int i = 6; i < temp.length; i++) {
             try {
                 char c = input.charAt(i);
