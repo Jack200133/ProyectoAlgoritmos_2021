@@ -1,18 +1,41 @@
+/**
+ * @author Juan Angel Carrera
+ * @author Diego Franco
+ * @author Andres de la Roca
+ * @version 24/03/2021
+ * @since 23/02/2021
+ *
+ * Clase que define el funcionamiento de las funciones
+ */
 import java.util.Arrays;
 
 public class Funciones {
+
     private String parametros;
     private String hacer;
 
+    /**
+     * @post: constructor vacio de la clase
+     */
     public Funciones() {
 
     }
 
+    /**
+     * @post: constructor de la clase
+     * @param hacer define que es lo que hace la funcion creada.
+     * @param parametros define el parametro que la funcion necesita para trabajar
+     */
     public Funciones(String hacer,String parametros) {
         this.hacer = hacer;
         this.parametros = parametros;
     }
 
+    /**
+     * @post: separa por partes el input enviado para identificar lo que hara la funcion y sus parametros necesario.
+     * @param input input que sera evaluado para identificar las diferentes partes de la funcion.
+     * @return regresa el nombre de la funcion como un primer valor y en el segundo las instrucciones de lo que hace.
+     */
     public Funciones Defun(String input) {
         String[] temp = input.split(" ");
         StringBuilder eve = new StringBuilder();
@@ -45,6 +68,12 @@ public class Funciones {
         return new Funciones(eve.toString(),temp[4]);
     }
 
+    /**
+     * @post: verifica que por cada uno de los caracteres especiales exista un espacio en blanco antes y despues del mismo.
+     * @param temp el caracteres que se debe evaluar.
+     * @param eve contenedor en el que se agregara el valor resultante si es que el caracter evaluado no tenia los espacios en blanco correspondientes.
+     * @param i posicion en la que se debe evaluar el caracter.
+     */
     private void verifica(String[] temp, StringBuilder eve, int i) {
         if(temp[i].equals("(") || temp[i].equals(")") || temp[i].equals("=") || temp[i].equals("-") || temp[i].equals("+") || temp[i].equals("*") || temp[i].equals("/")|| temp[i].equals("<") || temp[i].equals(">") ){
 
@@ -56,6 +85,11 @@ public class Funciones {
         }
     }
 
+    /**
+     * @post: metodo que cambia el parametro que la funcion necesita por el valor indicado.
+     * @param x el valor por el cual se debe sustituir el parametro dentro de la funcion.
+     * @return regresa las instrucciones de la funcion con el parametro cambiado.
+     */
     public String loquehace(String x){
 
         String[] temp = hacer.split(" ");
@@ -71,6 +105,9 @@ public class Funciones {
         return eve.toString();
     }
 
+    /**
+     * @return regresa las instrucciones de la funcion indicada.
+     */
     @Override
     public String toString() {
         return (hacer);
