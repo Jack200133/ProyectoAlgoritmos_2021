@@ -39,7 +39,7 @@ public class Condicionales {
         String[] temp = input.split(" ");
         String[] tamp = completo.split(" ");
         int ontast = 0;
-        String pruebas = "";
+        StringBuilder pruebas = new StringBuilder();
 
         for (int i = 11; i < tamp.length; i++) {
 
@@ -48,15 +48,13 @@ public class Condicionales {
             }
         }
         for (int i = ontast+1; i < tamp.length ; i++) {
-            pruebas += tamp[i];
-            pruebas += " ";
+            pruebas.append(tamp[i]);
+            pruebas.append(" ");
         }
         if(temp[1].equals("NIL")){
-            System.out.println("ENTRE AL NIL");
-            return new Condicionales(pruebas, "NIL");
+            return new Condicionales(pruebas.toString(), "NIL");
         }
         else{
-            System.out.println("ENTRE AL T");
             return new Condicionales(temp[1],"T");
 
         }

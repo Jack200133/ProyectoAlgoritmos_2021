@@ -1,13 +1,28 @@
-import java.util.Arrays;
+/**
+ * @author Juan Angel Carrera
+ * @author Diego Franco
+ * @author Andres de la Roca
+ * @version 24/03/2021
+ * @since 23/02/2021
+ *
+ * Clase que hace las operaciones aritmeticas
+ */
 
 public class Operaciones {
 
-
+    /**
+     * Instancion de la clase operar
+     */
     public Operaciones() {
 
     }
 
-
+    /**
+     *
+     * @param datos daots que se multiplicaran/ sumaran/ restana y diviran
+     * @return los datos ya operados
+     * Puede operar varios datos al mismo tiempo
+     */
     public String Operar(String datos){
         String[] temp = datos.split(" ");
         double res;

@@ -1,6 +1,19 @@
+/**
+ * @author Juan Angel Carrera
+ * @author Diego Franco
+ * @author Andres de la Roca
+ * @version 24/03/2021
+ * @since 23/02/2021
+ *
+ *  Clase que evalua lo que ingresa el usuario
+ */
 import java.util.*;
 
-
+/**
+ *
+ * @param <V> Valor generico para la llave del hashmap
+ * @param <F> Valor generico para el value del hasmap
+ */
 public class Evaluar<V,F> {
     private final Operaciones op;
     private final Quote quote;
@@ -10,6 +23,9 @@ public class Evaluar<V,F> {
     private final Predicados pred;
     private final Condicionales cond;
 
+    /**
+     * Inicializacion de la clase evaluar
+     */
     public Evaluar(){
         op = new Operaciones();
         quote = new Quote();
@@ -24,28 +40,29 @@ public class Evaluar<V,F> {
 
     private HashMap<V, F> almacen = new HashMap<V, F>();
 
+    /**
+     *
+     * @param input lo que ingresa el usuario y sera evaluar
+     * @param scan el scaner que ira de string por string envaluando si son o no ()
+     * @return el resultado ya evaluado
+     */
     public String Evaluo(String input,Scanner scan) {
 
-        String res = "";
-
-        // ( cond ( ( = n 1 ) 1 ) ( t 0 ) )
-        // ( defun fatorial ( n ) ( cond ( ( = n 1 ) 1 ) ( t ( * n ( fatorial ( - n 1 ) ) ) ) ) )
-       // ( defun fibonacci ( n ) ( cond ( ( = n 0 ) 0 ( ( = n 1 ) 1 ) ( t ( + ( fibonacci ( - n 1 ) ) ( fibonacci ( - n 2 ) ) ) ) ) )
+        StringBuilder res = new StringBuilder();
 
         for (int i = 0; i < input.length(); i++) {
             if(scan.hasNext()){
                 String tem = scan.next();
                 if (tem.equals(")")) {
-                    res = queso(res,input);
-                    return res;
+                    res = new StringBuilder(queso(res.toString(), input));
+                    return res.toString();
                 }else if (!tem.equals("(")) {
-                    res += tem;
-                    res+=" ";
+                    res.append(tem);
+                    res.append(" ");
                 }else{
-                    System.out.println("1. Primer eval"+input); // hay que borrar
-                    if(!res.contains("T")){
-                        res+= Evaluo(input, scan);
-                        res+= " ";
+                    if(!res.toString().contains("T")){
+                        res.append(Evaluo(input, scan));
+                        res.append(" ");
                     }else{
                         return ("T");
                     }
@@ -54,33 +71,35 @@ public class Evaluar<V,F> {
             }
 
         }
-        return res;
+        return res.toString();
     }
 
+    /**
+     *
+     * @param input reevaluacion del string para
+     * @return regresa el valor ya evaluado
+     */
     public String Evaluo(String input) {
         Scanner scan = new Scanner(input);
 
-        String res = "";
-
+        StringBuilder res = new StringBuilder();
 
         for (int i = 0; i < input.length(); i++) {
-            System.out.println("EL RES: " +res);//borrar
             if(scan.hasNext()){
                 String tem = scan.next();
 
                 if (tem.equals(")")) {
 
-                    res = queso(res,input);
-                    return res;
+                    res = new StringBuilder(queso(res.toString(), input));
+                    return res.toString();
                 }else if (!tem.equals("(")) {
-                    res += tem;
-                    res+=" ";
+                    res.append(tem);
+                    res.append(" ");
 
                 }else{
-                    System.out.println("1. Primer eval"+input); // hay que borrar
-                    if(!res.contains("T")){
-                        res+= Evaluo(input, scan);
-                        res+= " ";
+                    if(!res.toString().contains("T")){
+                        res.append(Evaluo(input, scan));
+                        res.append(" ");
                     }else{
                         return ("T");
                     }
@@ -94,6 +113,12 @@ public class Evaluar<V,F> {
         return res.toString();
     }
 
+    /**
+     *
+     * @param input valor que dice que tiene que hacer la evaluacion
+     * @param completo la string completo sin evaluar
+     * @return la evaluacion ya resuelta
+     */
     public String queso(String input,String completo) {
 
         String res;
@@ -117,13 +142,12 @@ public class Evaluar<V,F> {
 
         }
         else if (temp[0].equals("cond")&&temp[1].equals("T")){
-            //AQUI VA LA BANDERA
-            String ros = "";
+            StringBuilder ros = new StringBuilder();
             for (int i = 2; i < temp.length; i++) {
-                ros += temp[i];
-                ros += " ";
+                ros.append(temp[i]);
+                ros.append(" ");
             }
-            return queso(ros,"");
+            return queso(ros.toString(),"");
 
         }
         else if (input.contains("cond")) {
@@ -243,16 +267,16 @@ public class Evaluar<V,F> {
                         t = i;
                     }
                 }
-                String til = "";
+                StringBuilder til = new StringBuilder();
                 for (int i = 0; i < t; i++) {
-                    til += temp[i];
-                    til += " ";
+                    til.append(temp[i]);
+                    til.append(" ");
                 }
                 for (int i = t+1; i < temp.length; i++) {
-                    til += temp[i];
-                    til += " ";
+                    til.append(temp[i]);
+                    til.append(" ");
                 }
-                return queso(til,"");
+                return queso(til.toString(),"");
             }
             return temp[1]+ " "+ temp[0];
         }
