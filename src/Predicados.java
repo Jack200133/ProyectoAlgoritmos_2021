@@ -36,7 +36,6 @@ public class Predicados {
                 return state;
             }
         }
-        System.out.println(Arrays.toString(temp));
         return state;
     }
 
