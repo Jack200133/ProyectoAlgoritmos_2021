@@ -128,7 +128,7 @@ public class Evaluar<V,F> {
         if (input.contains("defun")) {
             if (!almacen.containsKey(temp[1])) {
                 almacen.put((V) temp[1], (F) fun.Defun(completo));
-                System.out.println(almacen);
+                //System.out.println(almacen);
                 return "Se agrego la funcion " + temp[1];
             } else {
 
