@@ -295,4 +295,8 @@ public class Evaluar<V,F> {
 
     }
 
+    public Boolean Llave(String llave){
+        return almacen.containsKey(llave);
+    }
+
 }
