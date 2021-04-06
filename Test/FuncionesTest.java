@@ -9,8 +9,8 @@ public class FuncionesTest {
 
     @Test
     public void defun() {
-        Funciones eva = new Funciones();
+        Funciones fun = new Funciones();
         String re = "( defun pollo ( x ) ( * x 2 )";
-        assertEquals(eva.Defun(re).getClass(), Funciones.class);
+        assertEquals(fun.Defun(re).getClass(), Funciones.class);
   }
 }

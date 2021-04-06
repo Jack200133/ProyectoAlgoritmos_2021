@@ -45,21 +45,26 @@ public class Predicados {
      * @return Regresa un boolean dependiendo si los valores dados son mayores que el siguiente.
      */
     public boolean biggerThan(String input) {
-        String temp[] = input.split(" ");
-        int length = temp.length;
-        double comparison1 = Double.parseDouble(temp[1]);
-        boolean state = true;
-        for(int i = 2; i < length; i++) {
-            double comparison2 = Double.parseDouble(temp[i]);
-            if(comparison1 > comparison2) {
-                state = true;
-                comparison1 = comparison2;
-            } else {
-                state = false;
-                return state;
+        try{
+            String temp[] = input.split(" ");
+            int length = temp.length;
+            double comparison1 = Double.parseDouble(temp[1]);
+            boolean state = true;
+            for(int i = 2; i < length; i++) {
+                double comparison2 = Double.parseDouble(temp[i]);
+                if(comparison1 > comparison2) {
+                    state = true;
+                    comparison1 = comparison2;
+                } else {
+                    state = false;
+                    return state;
+                }
             }
+            return state;
+        }catch(Exception e){
+            return false;
         }
-        return state;
+
     
     }
 
@@ -69,21 +74,26 @@ public class Predicados {
      * @return Regresa un boolean dependiendo si los valores dados son menores que el siguiente.
      */
     public boolean smallerThan(String input) {
-        String temp[] = input.split(" ");
-        int length = temp.length;
-        double comparison1 = Double.parseDouble(temp[1]);
-        boolean state = true;
-        for(int i = 2; i < length; i++) {
-            double comparison2 = Double.parseDouble(temp[i]);
-            if(comparison1 < comparison2) {
-                state = true;
-                comparison1 = comparison2;
-            } else {
-                state = false;
-                return state;
+        try{
+            String temp[] = input.split(" ");
+            int length = temp.length;
+            double comparison1 = Double.parseDouble(temp[1]);
+            boolean state = true;
+            for(int i = 2; i < length; i++) {
+                double comparison2 = Double.parseDouble(temp[i]);
+                if(comparison1 < comparison2) {
+                    state = true;
+                    comparison1 = comparison2;
+                } else {
+                    state = false;
+                    return state;
+                }
             }
+            return state;
+        }catch(Exception e){
+            return false;
         }
-        return state;
+
     }
 
 }

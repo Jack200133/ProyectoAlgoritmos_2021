@@ -12,7 +12,6 @@ import java.util.Arrays;
 public class Condicionales {
     private String falso;
     private String comprobar;
-
     /**
      * @post: constructor vacio de la clase
      */
@@ -51,9 +50,27 @@ public class Condicionales {
             pruebas.append(tamp[i]);
             pruebas.append(" ");
         }
+        if (temp.length>8) {
+            System.out.println("Entre " + Arrays.toString(temp));
+            if(temp[7].equals("T")){
+                System.out.println("Entrex2");
+                String res = "";
+                double ve = Double.parseDouble(temp[temp.length-2]);
+                ve = ve-2;
+                res = String.valueOf(ve);
+                System.out.println("RES: "+res);
+                if (res.equals(temp[2])) {
+                    return new Condicionales(temp[2],"T");
+                }else if(res.equals(temp[5])){
+                    return new Condicionales(temp[5],"T");
+                }
+            }
+        }
         if(temp[1].equals("NIL")){
+            System.out.println("PRUEBAS: "+pruebas.toString());
             return new Condicionales(pruebas.toString(), "NIL");
         }
+
         else{
             return new Condicionales(temp[1],"T");
 

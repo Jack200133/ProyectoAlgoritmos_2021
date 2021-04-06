@@ -123,7 +123,7 @@ public class Evaluar<V,F> {
 
         String res;
         String[] temp = input.split(" ");
-       // System.out.println("QUESO " + Arrays.toString(temp)); // best print
+        System.out.println("QUESO " + Arrays.toString(temp)); // best print
 
         if (input.contains("defun")) {
             if (!almacen.containsKey(temp[1])) {
@@ -278,7 +278,10 @@ public class Evaluar<V,F> {
                 }
                 return queso(til.toString(),"");
             }
-            return temp[1]+ " "+ temp[0];
+            if(temp.length>1){
+                return temp[0]+ " "+ temp[1];
+            }
+            return temp[0];
         }
         else {
                 if(temp.length > 2)
