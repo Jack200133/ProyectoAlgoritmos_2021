@@ -123,7 +123,7 @@ public class Evaluar<V,F> {
 
         String res;
         String[] temp = input.split(" ");
-        System.out.println("QUESO " + Arrays.toString(temp)); // best print
+        //System.out.println("QUESO " + Arrays.toString(temp)); // best print
 
         if (input.contains("defun")) {
             if (!almacen.containsKey(temp[1])) {
@@ -296,10 +296,6 @@ public class Evaluar<V,F> {
         }
         return input;
 
-    }
-
-    public Boolean Llave(String llave){
-        return almacen.containsKey(llave);
     }
 
 }
